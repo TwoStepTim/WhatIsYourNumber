@@ -41,8 +41,8 @@ function calculateNumber() {
         alert("Please enter valid numbers for monthly income and interest rate.");
         return;
     }
-
-    var yourNumber = monthlyIncome * 12 * interestRate / 100;
+    var interest = interestRate *.01
+    var yourNumber = (monthlyIncome * 12)/ interest;
 
     document.getElementById('result').innerHTML = "Your Number: " + yourNumber.toFixed(2);
 }
