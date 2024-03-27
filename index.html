@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Number Calculator</title>
+</head>
+<body>
+
+<h1>What is Your Number?</h1>
+
+<form id="numberForm">
+    <label for="monthlyIncome">Monthly Income:</label>
+    <input type="number" id="monthlyIncome" name="monthlyIncome" required><br><br>
+    
+    <label for="interestRate">Interest Rate (%):</label>
+    <input type="number" id="interestRate" name="interestRate" required><br><br>
+
+    <button type="button" onclick="calculateNumber()">Calculate Your Number</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function calculateNumber() {
+    var monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
+    var interestRate = parseFloat(document.getElementById('interestRate').value);
+
+    if (isNaN(monthlyIncome) || isNaN(interestRate)) {
+        alert("Please enter valid numbers for monthly income and interest rate.");
+        return;
+    }
+
+    var yourNumber = monthlyIncome * 12 * interestRate / 100;
+
+    document.getElementById('result').innerHTML = "Your Number: " + yourNumber.toFixed(2);
+}
+</script>
+
+</body>
+</html>
